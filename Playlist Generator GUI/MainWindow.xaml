@@ -1,0 +1,47 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:local="clr-namespace:PlaylistGenerator" x:Class="PlaylistGenerator.MainWindow"
+        xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+        Height="431" Width="409" WindowStartupLocation="CenterScreen" UseLayoutRounding="True">
+    <Window.DataContext>
+        <local:MainWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Label Margin="10,7,0,0" Content="Directory" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <TextBox x:Name="directory" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Margin="73,10,86,0" Text="{Binding Directory, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button x:Name="browse" Content="Browse" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0" Height="23" Click="browse_Click" Width="71"/>
+        <Label Content="File type" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top"/>
+        <ComboBox VerticalAlignment="Top" Margin="69,42,10,0" SelectedValuePath="Key" SelectedValue="{Binding SelectedFileType}" IsEnabled="{Binding Files, TargetNullValue=false}">
+            <ComboBox.Resources>
+                <CollectionViewSource x:Key="FileTypes" Source="{Binding FileTypes}">
+                    <CollectionViewSource.SortDescriptions>
+                        <scm:SortDescription PropertyName="Value" Direction="Descending"/>
+                    </CollectionViewSource.SortDescriptions>
+                </CollectionViewSource>
+            </ComboBox.Resources>
+            <ComboBox.ItemsSource>
+                <Binding Source="{StaticResource FileTypes}"/>
+            </ComboBox.ItemsSource>
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <Run Text="{Binding Key, Mode=OneWay}"/>
+                        (<Run Text="{Binding Value, Mode=OneWay}"/>)
+                    </TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ListBox ItemsSource="{Binding SelectedFiles}" Margin="10,73,10,66" IsEnabled="{Binding Files, TargetNullValue=false}">
+            <ListBox.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="{StaticResource {x:Static SystemColors.ControlTextColorKey}}"/>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Opacity="0"/>                
+                <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Opacity="0"/>
+            </ListBox.Resources>
+        </ListBox>
+        <Button x:Name="generate" Content="Generate" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25" IsDefault="True" Margin="0,0,0,31" Click="generate_Click" IsEnabled="{Binding Files, TargetNullValue=false}" Width="80"/>
+        <StatusBar Height="21" VerticalAlignment="Bottom" BorderThickness="0,1,0,0" BorderBrush="{StaticResource {x:Static SystemColors.ActiveBorderBrushKey}}">
+            <TextBlock x:Name="status" Text="{Binding Status}" VerticalAlignment="Bottom"/>
+        </StatusBar>
+    </Grid>
+</Window>

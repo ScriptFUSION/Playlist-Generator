@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playlist Generator GUI", "Playlist Generator GUI\Playlist Generator GUI.csproj", "{3294B331-287B-417B-A5EE-0AE67DAC34DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playlist Generator Test", "Playlist Generator Test\Playlist Generator Test.csproj", "{EFC820C6-0ABF-4C05-B262-849F39E8C18E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playlist Generator", "Playlist Generator\Playlist Generator.csproj", "{3F8A1F68-892F-46BC-8718-5CCA66E76315}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playlist Generator Console", "Playlist Generator Console\Playlist Generator Console.csproj", "{9DAA5A06-E8A7-4E25-8621-C0DA0C7EBCCE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3294B331-287B-417B-A5EE-0AE67DAC34DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3294B331-287B-417B-A5EE-0AE67DAC34DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3294B331-287B-417B-A5EE-0AE67DAC34DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3294B331-287B-417B-A5EE-0AE67DAC34DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFC820C6-0ABF-4C05-B262-849F39E8C18E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFC820C6-0ABF-4C05-B262-849F39E8C18E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFC820C6-0ABF-4C05-B262-849F39E8C18E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F8A1F68-892F-46BC-8718-5CCA66E76315}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F8A1F68-892F-46BC-8718-5CCA66E76315}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F8A1F68-892F-46BC-8718-5CCA66E76315}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F8A1F68-892F-46BC-8718-5CCA66E76315}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DAA5A06-E8A7-4E25-8621-C0DA0C7EBCCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DAA5A06-E8A7-4E25-8621-C0DA0C7EBCCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DAA5A06-E8A7-4E25-8621-C0DA0C7EBCCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DAA5A06-E8A7-4E25-8621-C0DA0C7EBCCE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
