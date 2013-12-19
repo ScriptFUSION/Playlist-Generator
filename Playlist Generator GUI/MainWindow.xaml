@@ -3,13 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:local="clr-namespace:PlaylistGenerator" x:Class="PlaylistGenerator.MainWindow"
         xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
-        Height="431" Width="409" WindowStartupLocation="CenterScreen" UseLayoutRounding="True">
+        Height="431" Width="409" WindowStartupLocation="CenterScreen" UseLayoutRounding="True" AllowDrop="True" Drop="Window_Drop" PreviewDragOver="Window_PreviewDragOver">
     <Window.DataContext>
         <local:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
         <Label Margin="10,7,0,0" Content="Directory" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <TextBox x:Name="directory" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Margin="73,10,86,0" Text="{Binding Directory, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="directory" Height="23" VerticalAlignment="Top" Margin="73,10,86,0" Text="{Binding Directory, UpdateSourceTrigger=PropertyChanged}"/>
         <Button x:Name="browse" Content="Browse" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0" Height="23" Click="browse_Click" Width="71"/>
         <Label Content="File type" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top"/>
         <ComboBox VerticalAlignment="Top" Margin="69,42,10,0" SelectedValuePath="Key" SelectedValue="{Binding SelectedFileType}" IsEnabled="{Binding Files, TargetNullValue=false}">
@@ -32,12 +32,20 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
+        <!-- Read-only ListBox -->
         <ListBox ItemsSource="{Binding SelectedFiles}" Margin="10,73,10,66" IsEnabled="{Binding Files, TargetNullValue=false}">
             <ListBox.Resources>
+                <!-- Hide item selection highlight. -->
                 <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="{StaticResource {x:Static SystemColors.ControlTextColorKey}}"/>
-                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Opacity="0"/>                
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Opacity="0"/>
                 <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Opacity="0"/>
             </ListBox.Resources>
+            <ListBox.ItemContainerStyle>
+                <!-- Hide item focus border. -->
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
         </ListBox>
         <Button x:Name="generate" Content="Generate" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25" IsDefault="True" Margin="0,0,0,31" Click="generate_Click" IsEnabled="{Binding Files, TargetNullValue=false}" Width="80"/>
         <StatusBar Height="21" VerticalAlignment="Bottom" BorderThickness="0,1,0,0" BorderBrush="{StaticResource {x:Static SystemColors.ActiveBorderBrushKey}}">
