@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>logo 1.1 grey.ico</ApplicationIcon>
+    <ApplicationIcon>logo 1.2 grey.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -60,7 +60,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="logo 1.1 grey.ico" />
+    <Content Include="logo 1.2 grey.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
