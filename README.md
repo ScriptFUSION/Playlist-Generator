@@ -35,5 +35,3 @@ The entire project has been designed with extensibility in mind so feel free to 
   [1]: https://raw.github.com/wiki/ScriptFUSION/Playlist-Generator/images/logo%201.2%20grey%20x35.png
   [2]: http://stackoverflow.com/questions/14942374/nuget-package-files-not-being-copied-to-project-content-during-build
   [3]: http://docs.nuget.org/docs/reference/package-restore
-  
-![](https://d2weczhvl823v0.cloudfront.net/ScriptFUSION/playlist-generator/trend.png)

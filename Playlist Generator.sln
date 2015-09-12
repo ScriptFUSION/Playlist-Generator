@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playlist Generator GUI", "Playlist Generator GUI\Playlist Generator GUI.csproj", "{3294B331-287B-417B-A5EE-0AE67DAC34DB}"
 EndProject
@@ -10,6 +10,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playlist Generator", "Playlist Generator\Playlist Generator.csproj", "{3F8A1F68-892F-46BC-8718-5CCA66E76315}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playlist Generator Console", "Playlist Generator Console\Playlist Generator Console.csproj", "{9DAA5A06-E8A7-4E25-8621-C0DA0C7EBCCE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0C7C84D3-CA41-4210-8EF8-19A91E6D5D31}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

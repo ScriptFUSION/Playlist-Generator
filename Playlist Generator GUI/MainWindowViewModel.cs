@@ -8,7 +8,7 @@ using System.Windows.Data;
 using FileDirectory = System.IO.Directory;
 
 namespace PlaylistGenerator {
-    class MainWindowViewModel : ViewModel {
+    sealed class MainWindowViewModel : ViewModel {
         //Working directory.
         private string directory;
 

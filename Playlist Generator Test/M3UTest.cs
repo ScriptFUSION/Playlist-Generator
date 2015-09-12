@@ -44,8 +44,11 @@ namespace PlaylistGeneratorTest {
             var m3u = new M3U();
             Assert.AreEqual(String.Empty, m3u.ToString());
 
-            m3u.Add("foo").Add("bar");
-            Assert.AreEqual("foo\nbar", m3u.ToString());
+            m3u.Add("foo");
+            Assert.AreEqual("foo\n", m3u.ToString());
+
+            m3u.Add("bar").Add("baz");
+            Assert.AreEqual("foo\nbar\nbaz\n", m3u.ToString());
         }
     }
 }

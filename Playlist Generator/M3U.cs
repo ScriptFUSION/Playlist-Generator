@@ -17,7 +17,7 @@ namespace PlaylistGenerator {
         public M3U(IEnumerable<string> paths) : base(paths) {}
 
         override public string ToString() {
-            return Paths.DefaultIfEmpty(String.Empty).Aggregate((a, b) => a += lineFeed + b);
+            return Paths.Aggregate(String.Empty, (a, b) => a + b + lineFeed);
         }
     }
 }
