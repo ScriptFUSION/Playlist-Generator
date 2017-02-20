@@ -28,7 +28,7 @@ namespace PlaylistGenerator {
         }
 
         public Playlist Write(Stream stream) {
-            var writer = new StreamWriter(stream);
+            var writer = new StreamWriter(stream, Encoding.UTF8);
             writer.Write(ToString());
             writer.Flush();
 
